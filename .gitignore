@@ -1,3 +1,19 @@
+# emacs tmp file
+\#*#
+*.py~
+*.c~
+*.h~
+*.java~
+
+# Python cache
+__pycache__/
+
+# For Java
+*.class
+*.jar
+*.war
+*.ear
+
 # Object files
 *.o
 *.ko
