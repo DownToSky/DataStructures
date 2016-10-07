@@ -1,13 +1,21 @@
 #include <stdlib.h>
 
-struct Node{
-void* data
-struct Node* next
+typedef struct node_t{
+	void* data;
+	struct node_t* next;
+} node_t;
+
+node_t * CreateNode(void * data)
+{
+	node_t *newNode=malloc(sizeof(node_t));
+	if (newNode == NULL)
+		return NULL;
+	newNode->data=data;
+	newNode->next = NULL;
+	return newNode;
 }
 
-void CreateNode(void* data)
+void DestroyNode(node_t * node)
 {
-	newNode=(*struct Node)malloc(sizeof(&data))
-	newNode.data=data
-	return newNode
+	free(node);
 }

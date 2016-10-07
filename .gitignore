@@ -4,6 +4,8 @@
 *.c~
 *.h~
 *.java~
+test.c
+test.py
 
 # Python cache
 __pycache__/
