@@ -7,7 +7,7 @@ node_t *tail;
 int size;
 }LL_t;
 
-LL_t * CreateLinkedList(void)
+LL_t * LL_Create(void)
 {
 	LL_t * newList=malloc(sizeof(LL_t));
 	newList->head=NULL;
@@ -16,7 +16,7 @@ LL_t * CreateLinkedList(void)
 	return newList;
 }
 
-void DestroyLinkedList(LL_t * list)
+void LL_Destroy(LL_t * list)
 {
 	node_t * ptr= list->head;
 	while(ptr!=NULL)
@@ -28,4 +28,14 @@ void DestroyLinkedList(LL_t * list)
 	free(list);
 }
 
-
+void * LL_find(LL_t * ll,void * data)
+{
+  node_t * ptr=ll->head;
+  while(ptr!=NULL)
+    {
+      if (ptr->data==data)
+	return ptr;
+      ptr=ptr->next;
+    }
+  return NULL;
+}
