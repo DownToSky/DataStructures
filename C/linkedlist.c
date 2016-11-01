@@ -4,15 +4,20 @@
 typedef struct linkedlist{
 node_t *head;
 node_t *tail;
+void (*freefunc)(void *);
+int elementSize
 int size;
 }LL_t;
 
-LL_t * LL_Create(void)
+LL_t * LL_Create(int elemSize,void (*fn)(void *))
 {
 	LL_t * newList=malloc(sizeof(LL_t));
-	newList->head=NULL;
-	newList->tail=NULL;
+	if (LL_t == NULL)
+		return NULL;
+	newList->head=newList->tail=NULL;
 	newList->size=0;
+	newList->freefunc=fn;
+	newList->elementSize=elemSize;
 	return newList;
 }
 
